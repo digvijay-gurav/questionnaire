@@ -1,16 +1,69 @@
-
 .mainWrapper {
-    display: grid;
-    justify-content: center;
-    padding: 2em;
-
+  display: grid;
+  justify-content: center;
+  padding: 2em;
+  position: relative;
+  .outter {
+    position: relative;
+    overflow: hidden;
     .questionBoxWrapper {
-        display: grid;
-        justify-content: center;
-        grid-row-gap: 1em;
-        padding: 1em;
-        border: 1px solid blue;
-        border-radius: 7px;
-        background: aliceblue;
+      display: grid;
+      justify-content: center;
+      grid-row-gap: 1em;
+      padding: 1em;
+      border: 1px solid blue;
+      border-radius: 7px;
+      background: aliceblue;
+      position: relative;
+      //   transition: transform linear 0.5s;
+      //   transition-delay: 2s;
+      //   transform: translateX(50%);
+      // animation: example 1.5s ;
+      // animation-duration: 1.5s;
+      // right: -100%;
+
+      &.moveToNext {
+        // transform: translateX(-100%);
+      }
     }
+
+    .questionInnerBox {
+      // animation-name: example;
+      // animation-duration: 1.5s;
+      position: relative;
+      .questionHidden {
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+        transform: translateX(100%);
+        transition: transform linear 0.5s;
+
+
+        // animation: example 1.5s ;
+      }
+      .formVisible {
+        width: 100% !important;
+        height: 100% !important;
+        transform: translateX(00%);
+
+        // transition-delay: 2s;
+      }
+    }
+  }
 }
+@keyframes example {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0%;
+  }
+
+  // 0%   {width: 0%;}
+  // // 25%  {width: 25%;}
+  // // 50%  {width: 50%;}
+  // 100% {width: 100%;}
+}
+//   }
+
+/* The element to apply the animation to */
