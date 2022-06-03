@@ -1,0 +1,16 @@
+
+.mainWrapper {
+    display: grid;
+    justify-content: center;
+    padding: 2em;
+
+    .questionBoxWrapper {
+        display: grid;
+        justify-content: center;
+        grid-row-gap: 1em;
+        padding: 1em;
+        border: 1px solid blue;
+        border-radius: 7px;
+        background: aliceblue;
+    }
+}
