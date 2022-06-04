@@ -3,8 +3,8 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
-export default function MultiChoiceQuestions({data, currentQuestion, nextQuestionHandler}: {data: any, currentQuestion: number, 
-    nextQuestionHandler: Function}) {
+export default function MultiChoiceQuestions({data, currentQuestion, nextQuestionHandler, previousQuestionHandler}: 
+    {data: any, currentQuestion: number, nextQuestionHandler: Function, previousQuestionHandler: Function}) {
   return (
         
         <div className='questionInnerBox'>
@@ -24,6 +24,7 @@ export default function MultiChoiceQuestions({data, currentQuestion, nextQuestio
                 })
                 }
             </FormGroup>
+            <button onClick={() => previousQuestionHandler()}>Previous</button>
             <button onClick={() => nextQuestionHandler()}>Next</button>
         </div>
   )
