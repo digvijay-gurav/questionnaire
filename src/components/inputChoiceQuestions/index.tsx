@@ -1,16 +1,14 @@
 import React from 'react';
 import FormGroup from '@mui/material/FormGroup';
 
-export default function InputTypeQuestion({data, currentQuestion, nextQuestionHandler, previousQuestionHandler}: 
-    {data: any, currentQuestion: number, nextQuestionHandler: Function, previousQuestionHandler: Function}) {
+export default function InputTypeQuestion({item, currentQuestion, nextQuestionHandler, previousQuestionHandler}: 
+    {item: any, currentQuestion: number, nextQuestionHandler: Function, previousQuestionHandler: Function}) {
   return (
     <div>
-        <h3>{data.questionnaire.questions[currentQuestion].headline}</h3>
-        <FormGroup>
+        <h3>{item.headline}</h3>
+        <FormGroup className='justify-center'>
             <input type='text' />
         </FormGroup>
-        <button onClick={() => previousQuestionHandler()}>Previous</button>
-        <button onClick={() => nextQuestionHandler()}>Next</button>
     </div>
   )
 }

@@ -5,16 +5,25 @@
   position: relative;
   .outter {
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     .questionBoxWrapper {
-      display: grid;
-      justify-content: center;
-      grid-row-gap: 1em;
+      // display: grid;
+      // justify-content: center;
+      // grid-row-gap: 1em;
       padding: 1em;
-      border: 1px solid blue;
-      border-radius: 7px;
-      background: aliceblue;
+      // border: 1px solid blue;
+      // background: aliceblue;
       position: relative;
+      width: 50em;
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0px 0px 17px 0.5px #0000008f;
+      border-radius: 7px;
+
+  
+
       //   transition: transform linear 0.5s;
       //   transition-delay: 2s;
       //   transform: translateX(50%);
@@ -25,30 +34,49 @@
       &.moveToNext {
         // transform: translateX(-100%);
       }
-    }
 
-    .questionInnerBox {
-      // animation-name: example;
-      // animation-duration: 1.5s;
-      position: relative;
-      .questionHidden {
-        width: 0px;
-        height: 0px;
-        overflow: hidden;
-        transform: translateX(100%);
-        transition: transform linear 0.5s;
+      // .questionInnerBox {
+        // animation-name: example;
+        // animation-duration: 1.5s;
+        position: relative;
+        .questionHidden {
+          width: 0px;
+          height: 0px;
+          overflow: hidden;
+          transition: transform linear 0.5s;
+          position: absolute;
+          display: flex;
+          justify-content: center;
 
 
-        // animation: example 1.5s ;
+
+
+          // animation: example 1.5s ;
+        }
+        .formVisible {
+          width: 100%;
+          // width: 100% !important;
+          height: 100% !important;
+
+          // transition-delay: 2s;
+        }
+        .next{
+          // transform: translateX(00%);
+          animation: leftNext 0.5s ;
+
+        }
+        .prev{
+          animation: rightNext 0.5s ;
+
+          // transform: translateX(00%);
+
+        }
+        .actionItem{
+          bottom: 10px;
+          position: absolute;
+        }
       }
-      .formVisible {
-        width: 100% !important;
-        height: 100% !important;
-        transform: translateX(00%);
-
-        // transition-delay: 2s;
-      }
-    }
+    // }
   }
 }
 @keyframes example {
@@ -67,3 +95,29 @@
 //   }
 
 /* The element to apply the animation to */
+// .justify-center{
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+
+@keyframes leftNext {
+  from { left: 100%; }
+  to { left: 0; }
+}
+
+@keyframes leftCurr {
+  from { left: 0; }
+  to { left: -100%; }
+}
+
+@keyframes rightNext {
+  from { left: -100%; }
+  to { left: 0; }
+}
+
+@keyframes rightCurr {
+  from { left: 0; }
+  to { left: 100%; }
+}
